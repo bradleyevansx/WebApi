@@ -1,0 +1,12 @@
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/bin/Debug/net7.0/WebAPITest.Domain.deps.json
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/bin/Debug/net7.0/WebAPITest.Domain.dll
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/bin/Debug/net7.0/WebAPITest.Domain.pdb
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.csproj.AssemblyReference.cache
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.AssemblyInfoInputs.cache
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.AssemblyInfo.cs
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.csproj.CoreCompileInputs.cache
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.dll
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/refint/WebAPITest.Domain.dll
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/WebAPITest.Domain.pdb
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/Debug/net7.0/ref/WebAPITest.Domain.dll

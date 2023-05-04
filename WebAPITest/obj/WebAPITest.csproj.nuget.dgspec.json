@@ -1,0 +1,205 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest/WebAPITest.csproj": {}
+  },
+  "projects": {
+    "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/WebAPITest.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/WebAPITest.Domain.csproj",
+        "projectName": "WebAPITest.Domain",
+        "projectPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/WebAPITest.Domain.csproj",
+        "packagesPath": "/Users/bradleyevans/.nuget/packages/",
+        "outputPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bradleyevans/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/packages/MudBlazor.Cupertino/": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/WebAPITest.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/WebAPITest.Repository.csproj",
+        "projectName": "WebAPITest.Repository",
+        "projectPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/WebAPITest.Repository.csproj",
+        "packagesPath": "/Users/bradleyevans/.nuget/packages/",
+        "outputPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bradleyevans/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/packages/MudBlazor.Cupertino/": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/WebAPITest.Domain.csproj": {
+                "projectPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Domain/WebAPITest.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.33.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest/WebAPITest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest/WebAPITest.csproj",
+        "projectName": "WebAPITest",
+        "projectPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest/WebAPITest.csproj",
+        "packagesPath": "/Users/bradleyevans/.nuget/packages/",
+        "outputPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bradleyevans/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/packages/MudBlazor.Cupertino/": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/WebAPITest.Repository.csproj": {
+                "projectPath": "/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPITest.Repository/WebAPITest.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.33.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
