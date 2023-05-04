@@ -4,20 +4,20 @@ using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Repository;
 
+
 public class PracticeSessionsRepository : IPracticeSessionsRepository
 {
-    public Container _container;
+    public PracticeSessionsCosmos Connection;
     
-    public PracticeSessionsRepository(Database database)
+    public PracticeSessionsRepository(PracticeSessionsCosmos connection)
     {
-        _container = database.GetContainer("Sessions");
+        Connection = connection;
     }
     
     
-    
-    public Task<PracticeSession> Get(int id)
+    public Task<PracticeSession> Get(PracticeSession entity)
     {
-        throw new NotImplementedException();
+        return Connection.Get(entity);
     }
 
     public Task<IEnumerable<PracticeSession>> GetAll()
@@ -27,20 +27,20 @@ public class PracticeSessionsRepository : IPracticeSessionsRepository
 
     public Task Add(PracticeSession entity)
     {
-        return _container.CreateItemAsync(entity);
+        return Connection.Add(entity);
     }
 
     public Task Delete(PracticeSession entity)
     {
-        throw new NotImplementedException();
+        return Connection.Delete(entity);
     }
 
     public Task Update(PracticeSession entity)
     {
-        throw new NotImplementedException();
+        return Connection.Update(entity);
     }
 
-    public async Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId)
+    /*public async Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId)
     {
         var list = new List<PracticeSession>();
         
@@ -50,5 +50,5 @@ public class PracticeSessionsRepository : IPracticeSessionsRepository
             list.AddRange(await iterator.ReadNextAsync());
         }
         return list;
-    }
+    }*/
 }

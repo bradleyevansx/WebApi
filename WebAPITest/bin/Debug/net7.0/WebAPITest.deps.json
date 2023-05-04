@@ -1072,6 +1072,9 @@
         }
       },
       "WebAPITest.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.Azure.Cosmos": "3.33.0"
+        },
         "runtime": {
           "WebAPITest.Domain.dll": {}
         }
