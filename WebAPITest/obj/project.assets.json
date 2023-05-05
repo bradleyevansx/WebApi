@@ -1978,6 +1978,9 @@
       "WebAPITest.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.Azure.Cosmos": "3.33.0"
+        },
         "compile": {
           "bin/placeholder/WebAPITest.Domain.dll": {}
         },

@@ -16,9 +16,9 @@ public class PracticeSessionsController : ControllerBase
     }
 
     
-    [HttpGet(nameof(GetAllByUserId))]
+    /*[HttpGet(nameof(GetAllByUserId))]
     public async Task<IActionResult> GetAllByUserId([FromQuery] string userId) =>
-        Ok(await _unitOfWork.PracticeSessions.GetAllPracticeSessionsByUserId(userId));
+        Ok(await _unitOfWork.PracticeSessions.GetAllPracticeSessionsByUserId(userId));*/
 
     [HttpPost(nameof(CreatePracticeSession))]
     public IActionResult CreatePracticeSession(PracticeSession newSession)

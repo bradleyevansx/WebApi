@@ -6,16 +6,16 @@ namespace WebAPITest.Repository;
 
 public class UserInfoRepository : IUserInfoRepository
 {
-    public Container _container;
+    public UserInfoCosmos Connection;
 
-    public UserInfoRepository(Database database)
+    public UserInfoRepository(UserInfoCosmos connection)
     {
-        _container = database.GetContainer("UserInfo");
+        Connection = connection;
     }
     
-    public Task<UserInfo> Get(int id)
+    public Task<UserInfo> Get(UserInfo entity)
     {
-        throw new NotImplementedException();
+        return Connection.Get(entity);
     }
 
     public Task<IEnumerable<UserInfo>> GetAll()
@@ -25,13 +25,22 @@ public class UserInfoRepository : IUserInfoRepository
 
     public Task Add(UserInfo entity)
     {
-        return _container.CreateItemAsync(entity);
+        return Connection.Add(entity);
     }
+    /*public Task Add(UserInfo entity)
+    {
+        return _container.CreateItemAsync(entity);
+    }*/
 
     public async Task Delete(UserInfo entity)
     {
-        var response = await _container.DeleteItemAsync<UserInfo>(entity.id, new PartitionKey(entity.id));
+        throw new NotImplementedException();
     }
+    
+    /*public async Task Delete(UserInfo entity)
+    {
+        var response = await _container.DeleteItemAsync<UserInfo>(entity.id, new PartitionKey(entity.id));
+    }*/
 
     public Task Update(UserInfo entity)
     {

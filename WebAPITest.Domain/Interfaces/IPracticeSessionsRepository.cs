@@ -4,5 +4,5 @@ namespace WebAPITest.Domain.Interfaces;
 
 public interface IPracticeSessionsRepository : IGenericRepository<PracticeSession>
 {
-    Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId);
+    /*Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId);*/
 }
