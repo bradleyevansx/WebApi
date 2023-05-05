@@ -5,40 +5,18 @@ using WebAPITest.Domain.Models;
 namespace WebAPITest.Repository;
 
 
-public class PracticeSessionsRepository : IPracticeSessionsRepository
+public class PracticeSessionsRepository : GenericRepository<PracticeSession>, IPracticeSessionsRepository
 {
-    public PracticeSessionsCosmos Connection;
+    public PracticeSessionsRepository(Database containerId)
+    {
+        
+        var container = containerId.GetContainer("Sessions");
+
+        Connection = new GenericCosmos<PracticeSession>(container);
+    }
     
-    public PracticeSessionsRepository(PracticeSessionsCosmos connection)
-    {
-        Connection = connection;
-    }
     
     
-    public Task<PracticeSession> Get(PracticeSession entity)
-    {
-        return Connection.Get(entity);
-    }
-
-    public Task<IEnumerable<PracticeSession>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task Add(PracticeSession entity)
-    {
-        return Connection.Add(entity);
-    }
-
-    public Task Delete(PracticeSession entity)
-    {
-        return Connection.Delete(entity);
-    }
-
-    public Task Update(PracticeSession entity)
-    {
-        return Connection.Update(entity);
-    }
 
     /*public async Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId)
     {

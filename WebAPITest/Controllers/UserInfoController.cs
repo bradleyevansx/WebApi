@@ -26,7 +26,7 @@ public class UserInfoController : ControllerBase
     [HttpDelete(nameof(DeleteUser))]
     public IActionResult DeleteUser(UserInfo user)
     {
-        var result = _unitOfWork.UserInfo.Delete(user);
+        var result = _unitOfWork.UserInfo.Delete(user.id, user.id);
         if (result is not null) return Ok("User Deleted");
         else return BadRequest("Error in Deleting the User");
     }
