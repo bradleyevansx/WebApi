@@ -4,13 +4,13 @@ using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Repository;
 
-public class GenericCosmos<T> : ICosmos<T> where T : class
+public class CosmosRepository<T> : IRepository<T> where T : class
 {
     private readonly Container _container;
 
-    public GenericCosmos(Container containerId)
+    public CosmosRepository(string ContainerName)
     {
-        _container = containerId;
+        _container = new CosmosConnectionManager(ContainerName).ContainerConnection;
     }
     
     public async Task<T> Get(string id, string partitionKey)

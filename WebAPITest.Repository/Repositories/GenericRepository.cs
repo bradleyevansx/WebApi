@@ -1,11 +1,12 @@
 using System.ComponentModel;
+using Microsoft.Azure.Cosmos;
 using WebAPITest.Domain.Interfaces;
 
 namespace WebAPITest.Repository;
 
-public class GenericRepository<T> : IGenericRepository<T> where T : class
+public class GenericRepository<T> : IRepository<T> where T : class
 {
-    public GenericCosmos<T> Connection;
+    public CosmosRepository<T> Connection;
 
 
 
@@ -19,17 +20,17 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         throw new NotImplementedException();
     }
 
-    public Task Add(T entity)
+    public Task<ItemResponse<T>> Add(T entity)
     {
         return Connection.Add(entity);
     }
 
-    public Task Delete(string id, string partitionKey)
+    public Task<ItemResponse<T>> Delete(string id, string partitionKey)
     {
         return Connection.Delete(id, partitionKey);
     }
 
-    public Task Update(string id, string partitionKey)
+    public Task<ItemResponse<string?>> Update(string id, string partitionKey)
     {
         return Connection.Update(id, partitionKey);
     }

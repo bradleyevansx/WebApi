@@ -1,9 +1,8 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Domain.Interfaces;
 
-public interface ICosmos<T> where T : class
+public interface IRepository<T> where T : class
 {
     Task<T> Get(string id, string partitionKey);
     Task<IEnumerable<T>> GetAll();
