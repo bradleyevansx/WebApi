@@ -6,16 +6,16 @@ namespace WebAPITest.Repository;
 
 public class CosmosRepository<T> : IRepository<T> where T : class
 {
-    private readonly Container _container;
+    private readonly Container ContainerConnection;
 
-    public CosmosRepository(CosmosConnectionManager connectionManager, string ContainerName)
+    public CosmosRepository(CosmosConnectionManager connectionManager, string containerName)
     {
-        _container = connectionManager.CreateConnection(ContainerName);
+        ContainerConnection = connectionManager.CreateConnection(containerName);
     }
     
     public async Task<T> Get(string id, string partitionKey)
     {
-        return await _container.ReadItemAsync<T>(id, new PartitionKey(partitionKey));
+        return await ContainerConnection.ReadItemAsync<T>(id, new PartitionKey(partitionKey));
     }
 
     public Task<IEnumerable<T>> GetAll()
@@ -26,16 +26,16 @@ public class CosmosRepository<T> : IRepository<T> where T : class
     public async Task<ItemResponse<T>> Add(T entity)
     {
         
-        return await _container.CreateItemAsync(entity);
+        return await ContainerConnection.CreateItemAsync(entity);
     }
 
     public async Task<ItemResponse<T>> Delete(string id, string partitionKey)
     {
-        return await _container.DeleteItemAsync<T>(id, new PartitionKey(partitionKey));
+        return await ContainerConnection.DeleteItemAsync<T>(id, new PartitionKey(partitionKey));
     }
 
     public async Task<ItemResponse<string?>> Update(string id, string partitionKey)
     {
-        return await _container.UpsertItemAsync(id, new PartitionKey(partitionKey));
+        return await ContainerConnection.UpsertItemAsync(id, new PartitionKey(partitionKey));
     }
 }

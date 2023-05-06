@@ -5,18 +5,28 @@ namespace WebAPITest.Repository;
 
 public class UnitOfWork : IUnitOfWork
 {
-    public IPracticeSessionRepository PracticeSession { get; }
-    public IUserInfoRepository UserInfo { get; }
+    public bool disposing = false;
+    public IPracticeSessionRepository PracticeSessionRepo { get; }
+    public IUserInfoRepository UserInfoRepo { get; }
 
 
-    public UnitOfWork(IPracticeSessionRepository practiceSession, IUserInfoRepository userInfoRepository)
+    public UnitOfWork(IPracticeSessionRepository practiceSessionRepo, IUserInfoRepository userInfoRepo)
     {
-        PracticeSession = practiceSession;
-        UserInfo = userInfoRepository;
-    }
-    
-    public void Dispose()
-    {
+        PracticeSessionRepo = practiceSessionRepo;
+        UserInfoRepo = userInfoRepo;
     }
 
+    public void Dispose() 
+    { 
+        Dispose(true); 
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            /*implement dispose if useful*/
+        }
+    }
 }
