@@ -1,6 +1,6 @@
 namespace WebAPITest.Domain.Models;
 
-public record UserInfo
+public class UserInfo
 {
     public string? id { get; set; }
     public string? Username { get; set; }

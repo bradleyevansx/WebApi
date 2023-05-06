@@ -17,7 +17,7 @@ public class GenericRepository<T> : IRepository<T> where T : class
 
     public Task<IEnumerable<T>> GetAll()
     {
-        throw new NotImplementedException();
+        return Connection.GetAll();
     }
 
     public Task<ItemResponse<T>> Add(T entity)
@@ -30,8 +30,8 @@ public class GenericRepository<T> : IRepository<T> where T : class
         return Connection.Delete(id, partitionKey);
     }
 
-    public Task<ItemResponse<string?>> Update(string id, string partitionKey)
+    public Task<ItemResponse<T>> Update(T entity, string partitionKey)
     {
-        return Connection.Update(id, partitionKey);
+        return Connection.Update(entity, partitionKey);
     }
 }

@@ -8,5 +8,5 @@ public interface IRepository<T> where T : class
     Task<IEnumerable<T>> GetAll();
     Task<ItemResponse<T>> Add(T entity);
     Task<ItemResponse<T>> Delete(string id, string partitionKey);
-    Task<ItemResponse<string?>> Update(string id, string partitionKey);
+    Task<ItemResponse<T>> Update(T entity, string partitionKey);
 }
