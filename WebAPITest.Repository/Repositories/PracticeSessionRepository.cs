@@ -5,11 +5,11 @@ using WebAPITest.Domain.Models;
 namespace WebAPITest.Repository;
 
 
-public class PracticeSessionsGenericRepository : GenericRepository<PracticeSession>, IPracticeSessionsRepository
+public class PracticeSessionRepository : GenericRepository<PracticeSession>, IPracticeSessionRepository
 {
-    public PracticeSessionsGenericRepository()
+    public PracticeSessionRepository(CosmosConnectionManager connectionManager)
     {
-        Connection = new CosmosRepository<PracticeSession>("Sessions");
+        Connection = new CosmosRepository<PracticeSession>(connectionManager, "Sessions");
     }
     
     

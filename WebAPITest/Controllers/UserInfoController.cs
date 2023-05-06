@@ -8,17 +8,17 @@ namespace WebAPITest.Controllers;
 [ApiController]
 public class UserInfoController : ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly IUserInfoRepository UserInfoConnection;
 
-    public UserInfoController(IUnitOfWork unitOfWork)
+    public UserInfoController(IUserInfoRepository userInfoConnection)
     {
-        _unitOfWork = unitOfWork;
+        UserInfoConnection = userInfoConnection;
     }
     
     [HttpPost(nameof(CreateUser))]
     public IActionResult CreateUser(UserInfo user)
     {
-        var result = _unitOfWork.UserInfo.Add(user);
+        var result = UserInfoConnection.Add(user);
         if (result is not null) return Ok("User Created");
         else return BadRequest("Error in Creating the User");
     }
@@ -26,7 +26,7 @@ public class UserInfoController : ControllerBase
     [HttpDelete(nameof(DeleteUser))]
     public IActionResult DeleteUser(UserInfo user)
     {
-        var result = _unitOfWork.UserInfo.Delete(user.id, user.id);
+        var result = UserInfoConnection.Delete(user.id, user.id);
         if (result is not null) return Ok("User Deleted");
         else return BadRequest("Error in Deleting the User");
     }

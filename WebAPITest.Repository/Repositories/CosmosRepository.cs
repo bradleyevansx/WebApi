@@ -8,9 +8,9 @@ public class CosmosRepository<T> : IRepository<T> where T : class
 {
     private readonly Container _container;
 
-    public CosmosRepository(string ContainerName)
+    public CosmosRepository(CosmosConnectionManager connectionManager, string ContainerName)
     {
-        _container = new CosmosConnectionManager(ContainerName).ContainerConnection;
+        _container = connectionManager.CreateConnection(ContainerName);
     }
     
     public async Task<T> Get(string id, string partitionKey)
