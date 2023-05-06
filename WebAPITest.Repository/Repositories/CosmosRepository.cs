@@ -8,9 +8,9 @@ public class CosmosRepository<T> : IRepository<T> where T : class
 {
     private readonly Container ContainerConnection;
 
-    public CosmosRepository(CosmosConnectionManager connectionManager, string containerName)
+    public CosmosRepository(CosmosConnectionManager connectionManager, string ContainerName)
     {
-        ContainerConnection = connectionManager.CreateConnection(containerName);
+        ContainerConnection = connectionManager.CreateConnection(ContainerName);
     }
     
     public async Task<T> Get(string id, string partitionKey)
@@ -18,9 +18,17 @@ public class CosmosRepository<T> : IRepository<T> where T : class
         return await ContainerConnection.ReadItemAsync<T>(id, new PartitionKey(partitionKey));
     }
 
-    public Task<IEnumerable<T>> GetAll()
+    public async Task<IEnumerable<T>> GetAll()
     {
-        throw new NotImplementedException();
+        var documents = ContainerConnection.GetItemQueryIterator<T>("SELECT * FROM c");
+        var results = new List<T>();
+        while (documents.HasMoreResults)
+        {
+            var response = await documents.ReadNextAsync();
+            results = response.ToList();
+        }
+
+        return results;
     }
 
     public async Task<ItemResponse<T>> Add(T entity)
@@ -34,8 +42,9 @@ public class CosmosRepository<T> : IRepository<T> where T : class
         return await ContainerConnection.DeleteItemAsync<T>(id, new PartitionKey(partitionKey));
     }
 
-    public async Task<ItemResponse<string?>> Update(string id, string partitionKey)
+ 
+    public async Task<ItemResponse<T>> Update(T entity, string partitionKey)
     {
-        return await ContainerConnection.UpsertItemAsync(id, new PartitionKey(partitionKey));
+        return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(partitionKey));
     }
 }
