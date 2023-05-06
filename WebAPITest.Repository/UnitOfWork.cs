@@ -5,13 +5,13 @@ namespace WebAPITest.Repository;
 
 public class UnitOfWork : IUnitOfWork
 {
-    public IPracticeSessionsRepository PracticeSessions { get; }
+    public IPracticeSessionRepository PracticeSession { get; }
     public IUserInfoRepository UserInfo { get; }
 
 
-    public UnitOfWork(IPracticeSessionsRepository practiceSessions, IUserInfoRepository userInfoRepository)
+    public UnitOfWork(IPracticeSessionRepository practiceSession, IUserInfoRepository userInfoRepository)
     {
-        PracticeSessions = practiceSessions;
+        PracticeSession = practiceSession;
         UserInfo = userInfoRepository;
     }
     

@@ -6,13 +6,13 @@ namespace WebAPITest.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PracticeSessionsController : ControllerBase
+public class PracticeSessionController : ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly IPracticeSessionRepository PracticeSessionConnection;
 
-    public PracticeSessionsController(IUnitOfWork unitOfWork)
+    public PracticeSessionController(IPracticeSessionRepository practiceSessionConnection)
     {
-        _unitOfWork = unitOfWork;
+        PracticeSessionConnection = practiceSessionConnection;
     }
 
     
@@ -23,7 +23,7 @@ public class PracticeSessionsController : ControllerBase
     [HttpPost(nameof(CreatePracticeSession))]
     public IActionResult CreatePracticeSession(PracticeSession newSession)
     {
-        var result = _unitOfWork.PracticeSessions.Add(newSession);
+        var result = PracticeSessionConnection.Add(newSession);
         if (result is not null) return Ok("PracticeSession Created");
         else return BadRequest("Error in Creating the PracticeSession");
     }

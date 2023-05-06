@@ -2,7 +2,7 @@ using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Domain.Interfaces;
 
-public interface IPracticeSessionsRepository : IRepository<PracticeSession>
+public interface IPracticeSessionRepository : IRepository<PracticeSession>
 {
     /*Task<IEnumerable<PracticeSession>> GetAllPracticeSessionsByUserId(string userId);*/
 }

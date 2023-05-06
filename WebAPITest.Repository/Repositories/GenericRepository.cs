@@ -6,7 +6,7 @@ namespace WebAPITest.Repository;
 
 public class GenericRepository<T> : IRepository<T> where T : class
 {
-    public CosmosRepository<T> Connection;
+    protected CosmosRepository<T> Connection;
 
 
 
