@@ -13,9 +13,9 @@ namespace WebAPITest.Controllers;
         protected IRepository<T> RepositoryConnection;
 
         [HttpGet(nameof(Get))]
-        public Task<T> Get(string id, string partitionKey)
+        public Task<T> Get([FromQuery] Entity entity)
         {
-            return RepositoryConnection.Get(id, partitionKey);
+            return RepositoryConnection.Get(entity.id, entity.partitionKey);
         }
         
         [HttpGet(nameof(GetAll))]
@@ -25,7 +25,7 @@ namespace WebAPITest.Controllers;
         }
 
         [HttpPost(nameof(Create))]
-        public IActionResult Create(T entity)
+        public IActionResult Create([FromBody] T entity)
         {
             var result = RepositoryConnection.Add(entity);
             if (result is not null) return Ok("Entity Created");
