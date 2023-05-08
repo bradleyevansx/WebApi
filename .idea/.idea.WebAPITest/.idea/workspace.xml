@@ -9,19 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13341bad-c312-49fe-ae2d-82167b5674c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebAPI.Domain/Models/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/Models/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/Models/Entity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI.Domain/Models/PracticeSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/Models/PracticeSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/CosmosConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/CosmosConnectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/Repositories/CosmosRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/Repositories/CosmosRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/BaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/BaseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/apphost" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683221921891</updated>
-      <workItem from="1683221922931" duration="42110000" />
+      <workItem from="1683221922931" duration="44363000" />
     </task>
     <servers />
   </component>

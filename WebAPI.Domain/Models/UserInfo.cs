@@ -1,8 +1,8 @@
 namespace WebAPITest.Domain.Models;
 
-public class UserInfo
+public class UserInfo : Entity
 {
-    public string? id { get; set; }
     public string? Username { get; set; }
     public string? Password { get; set; }
+    public override string? PartitionKey => Id;
 }

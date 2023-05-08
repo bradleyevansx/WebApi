@@ -1,7 +1,8 @@
 namespace WebAPITest.Domain.Models;
 
-public class Entity
+public abstract class Entity
 {
-    public string? id { get; set; }
-    public string? partitionKey { get; set; }
+    public string? Id { get; set; }
+    public DateTime CreatedDateTime { get; set; }
+    public abstract string? PartitionKey { get; }
 }
