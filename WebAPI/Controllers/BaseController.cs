@@ -6,43 +6,47 @@ using WebAPITest.Repository;
 
 namespace WebAPITest.Controllers;
 
-    [Route("api/[controller]")]
-    [ApiController]
-    public class BaseController<T> : ControllerBase where T : class
+    public class BaseController<T> : ControllerBase where T : Entity
     {
-        protected IRepository<T> RepositoryConnection;
+        public IRepository<T> RepositoryConnection { get; }
 
-        [HttpGet(nameof(Get))]
-        public Task<T> Get(string id, string partitionKey)
+        public BaseController(IRepository<T> repositoryConnection)
         {
-            return RepositoryConnection.Get(id, partitionKey);
+            RepositoryConnection = repositoryConnection;
+        }
+
+        [HttpGet("{id}")]
+        public Task<T> GetAsync(string id)
+        {
+            throw new NotImplementedException();
+            // return RepositoryConnection.Get(entity.id, entity.partitionKey);
         }
         
-        [HttpGet(nameof(GetAll))]
-        public Task<IEnumerable<T>> GetAll()
+        [HttpGet]
+        public Task<IEnumerable<T>> GetAllAsync()
         {
             return RepositoryConnection.GetAll();
         }
 
-        [HttpPost(nameof(Create))]
-        public IActionResult Create(T entity)
+        [HttpPost]
+        public IActionResult CreateAsync([FromBody] T entity)
         {
             var result = RepositoryConnection.Add(entity);
             if (result is not null) return Ok("Entity Created");
             else return BadRequest("Error in Creating the Entity");
         }
         
-        [HttpDelete(nameof(Delete))]
-        public IActionResult Delete(string id, string partitionKey)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteAsync(string id)
         {
-            var result = RepositoryConnection.Delete(id, partitionKey);
+            var result = RepositoryConnection.Delete(id);
             if (result is not null) return Ok("Entity Deleted");
             else return BadRequest("Error in Deleting the Entity");
         }
         
-        [HttpPut(nameof(Update))]
-        public Task<ItemResponse<T>> Update(T entity, string partitionKey)
+        [HttpPut]
+        public Task<ItemResponse<T>> UpdateAsync([FromBody] T entity)
         {
-            return RepositoryConnection.Update(entity, partitionKey);
+            return RepositoryConnection.Update(entity);
         }
     }

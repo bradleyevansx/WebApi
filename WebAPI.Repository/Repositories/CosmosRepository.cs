@@ -4,7 +4,7 @@ using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Repository;
 
-public class CosmosRepository<T> : IRepository<T> where T : class
+public class CosmosRepository<T> : IRepository<T> where T : Entity
 {
     private readonly Container ContainerConnection;
 
@@ -13,9 +13,9 @@ public class CosmosRepository<T> : IRepository<T> where T : class
         ContainerConnection = connectionManager.CreateConnection(ContainerName);
     }
     
-    public async Task<T> Get(string id, string partitionKey)
+    public async Task<T> Get(string id)
     {
-        return await ContainerConnection.ReadItemAsync<T>(id, new PartitionKey(partitionKey));
+        return await ContainerConnection.FirstAsync<T>(id);
     }
 
     public async Task<IEnumerable<T>> GetAll()
@@ -33,18 +33,25 @@ public class CosmosRepository<T> : IRepository<T> where T : class
 
     public async Task<ItemResponse<T>> Add(T entity)
     {
-        
+        entity.Id = Guid.NewGuid().ToString();
+        entity.CreatedDateTime = DateTime.UtcNow;
         return await ContainerConnection.CreateItemAsync(entity);
     }
 
-    public async Task<ItemResponse<T>> Delete(string id, string partitionKey)
+    public async Task<ItemResponse<T>> Delete(string id)
     {
-        return await ContainerConnection.DeleteItemAsync<T>(id, new PartitionKey(partitionKey));
+        var item = await ContainerConnection.FirstAsync<T>(id);
+
+        if (item is null)
+        {
+            throw new Exception("Cannot delete this item");
+        }
+        return await ContainerConnection.DeleteItemAsync<T>(item.Id, new PartitionKey(item.PartitionKey));
     }
 
  
-    public async Task<ItemResponse<T>> Update(T entity, string partitionKey)
+    public async Task<ItemResponse<T>> Update(T entity)
     {
-        return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(partitionKey));
+        return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(entity.PartitionKey));
     }
 }

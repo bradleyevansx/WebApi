@@ -4,7 +4,7 @@ using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Repository;
 
-public class UserInfoRepository : GenericRepository<UserInfo>, IUserInfoRepository
+public class UserInfoRepository : GenericRepository<UserInfo>
 {
 
     public UserInfoRepository(CosmosConnectionManager connectionManager)

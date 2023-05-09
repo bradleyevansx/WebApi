@@ -2,9 +2,10 @@ using Microsoft.Azure.Cosmos;
 
 namespace WebAPITest.Repository;
 
-public class CosmosConnectionManager
+public class CosmosConnectionManager : IDisposable
 {
     private readonly CosmosClient ClientConnection;
+
 
     public CosmosConnectionManager()
     {
@@ -16,5 +17,13 @@ public class CosmosConnectionManager
         return ClientConnection.GetContainer("Music", containerId);
     }
 
+
+
+ 
+    public void Dispose()
+    {
+        ClientConnection.Dispose();
+    }
+    
     
 }

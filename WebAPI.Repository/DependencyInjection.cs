@@ -11,8 +11,8 @@ public static class DependencyInjection
     public static IServiceCollection AddRepository(this IServiceCollection services)
     {
 
-        services.AddTransient<IUserInfoRepository, UserInfoRepository>();
-        services.AddTransient<IPracticeSessionRepository, PracticeSessionRepository>();
+        services.AddTransient<IRepository<UserInfo>, UserInfoRepository>();
+        services.AddTransient<IRepository<PracticeSession>, PracticeSessionRepository>();
         services.AddTransient<IUnitOfWork, UnitOfWork>();
 
         services.AddSingleton<CosmosConnectionManager>();

@@ -1,16 +1,17 @@
 using Microsoft.Azure.Cosmos;
 using WebAPITest.Domain.Interfaces;
+using WebAPITest.Domain.Models;
 
 namespace WebAPITest.Repository;
 
 public class UnitOfWork : IUnitOfWork
 {
     public bool disposing = false;
-    public IPracticeSessionRepository PracticeSessionRepo { get; }
-    public IUserInfoRepository UserInfoRepo { get; }
+    public IRepository<PracticeSession> PracticeSessionRepo { get; }
+    public IRepository<UserInfo> UserInfoRepo { get; }
 
 
-    public UnitOfWork(IPracticeSessionRepository practiceSessionRepo, IUserInfoRepository userInfoRepo)
+    public UnitOfWork(IRepository<PracticeSession> practiceSessionRepo, IRepository<UserInfo> userInfoRepo)
     {
         PracticeSessionRepo = practiceSessionRepo;
         UserInfoRepo = userInfoRepo;

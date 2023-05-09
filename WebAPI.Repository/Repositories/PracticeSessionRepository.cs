@@ -5,7 +5,7 @@ using WebAPITest.Domain.Models;
 namespace WebAPITest.Repository;
 
 
-public class PracticeSessionRepository : GenericRepository<PracticeSession>, IPracticeSessionRepository
+public class PracticeSessionRepository : GenericRepository<PracticeSession>
 {
     public PracticeSessionRepository(CosmosConnectionManager connectionManager)
     {
