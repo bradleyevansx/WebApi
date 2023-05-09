@@ -8,8 +8,7 @@ namespace WebAPITest.Controllers;
 [ApiController]
 public class UserInfoController : BaseController<UserInfo>
 {
-    public UserInfoController(IUserInfoRepository userInfoRepository)
+    public UserInfoController(IRepository<UserInfo> repositoryConnection) : base(repositoryConnection)
     {
-        RepositoryConnection = userInfoRepository;
     }
 }

@@ -1,8 +1,11 @@
+using Microsoft.Azure.Cosmos;
+using WebAPITest.Domain.Models;
+
 namespace WebAPITest.Domain.Interfaces;
 
 public interface IUnitOfWork : IDisposable
 {
-    IPracticeSessionRepository PracticeSessionRepo { get; }
-    IUserInfoRepository UserInfoRepo { get; }
+    IRepository<PracticeSession> PracticeSessionRepo { get; }
+    IRepository<UserInfo> UserInfoRepo { get; }
 }
 

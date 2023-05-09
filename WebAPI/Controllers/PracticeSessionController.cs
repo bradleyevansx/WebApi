@@ -8,8 +8,7 @@ namespace WebAPITest.Controllers;
 [ApiController]
 public class PracticeSessionController : BaseController<PracticeSession>
 {
-    public PracticeSessionController(IPracticeSessionRepository practiceSessionConnection)
+    public PracticeSessionController(IRepository<PracticeSession> repositoryConnection) : base(repositoryConnection)
     {
-        RepositoryConnection = practiceSessionConnection;
     }
 }

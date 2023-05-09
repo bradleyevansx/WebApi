@@ -8,7 +8,12 @@ namespace WebAPITest.Controllers;
 
     public class BaseController<T> : ControllerBase where T : Entity
     {
-        protected IRepository<T> RepositoryConnection;
+        public IRepository<T> RepositoryConnection { get; }
+
+        public BaseController(IRepository<T> repositoryConnection)
+        {
+            RepositoryConnection = repositoryConnection;
+        }
 
         [HttpGet("{id}")]
         public Task<T> GetAsync(string id)
