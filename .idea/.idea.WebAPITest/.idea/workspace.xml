@@ -9,11 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13341bad-c312-49fe-ae2d-82167b5674c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/Models/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/Models/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/Models/PracticeSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/Models/PracticeSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/CosmosConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/CosmosConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/Repositories/CosmosRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/Repositories/CosmosRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebAPITest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebAPITest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/bin/Debug/net7.0/WebAPI.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/WebAPI.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/ref/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/ref/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/refint/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Domain/obj/Debug/net7.0/refint/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/bin/Debug/net7.0/WebAPI.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/ref/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/ref/WebAPI.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/refint/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI.Repository/obj/Debug/net7.0/refint/WebAPI.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/BaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/BaseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net7.0/WebAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/WebAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/ref/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/ref/WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/refint/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net7.0/refint/WebAPI.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +56,12 @@
     <setting file="file://$PROJECT_DIR$/WebAPI/Controllers/BaseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebAPI/Controllers/PracticeSessionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebAPI/Controllers/UserInfoController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/beca7ff1f3155a81bb2e305fd7cbeddb72988b5d3c1fdb79a84eadb3667b2e7/Container.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2PL2DYhYyB7ovYzg9mA6p3rM1Yb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -96,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683221921891</updated>
-      <workItem from="1683221922931" duration="44363000" />
+      <workItem from="1683221922931" duration="53786000" />
     </task>
     <servers />
   </component>
