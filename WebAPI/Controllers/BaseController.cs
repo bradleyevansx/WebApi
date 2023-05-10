@@ -18,8 +18,7 @@ namespace WebAPITest.Controllers;
         [HttpGet("{id}")]
         public Task<T> GetAsync(string id)
         {
-            throw new NotImplementedException();
-            // return RepositoryConnection.Get(entity.id, entity.partitionKey);
+            return RepositoryConnection.Get(id);
         }
         
         [HttpGet]
