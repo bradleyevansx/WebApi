@@ -32,7 +32,7 @@ namespace WebAPITest.Controllers;
         {
             var result = RepositoryConnection.Add(entity);
             if (result is not null) return Ok("Entity Created");
-            else return BadRequest("Error in Creating the Entity");
+            else return BadRequest("Error In Creating the Entity");
         }
         
         [HttpDelete("{id}")]
@@ -40,12 +40,14 @@ namespace WebAPITest.Controllers;
         {
             var result = RepositoryConnection.Delete(id);
             if (result is not null) return Ok("Entity Deleted");
-            else return BadRequest("Error in Deleting the Entity");
+            else return BadRequest("Error In Deleting the Entity");
         }
         
         [HttpPut]
-        public Task<ItemResponse<T>> UpdateAsync([FromBody] T entity)
+        public IActionResult UpdateAsync([FromBody] T entity)
         {
-            return RepositoryConnection.Update(entity);
+            var result = RepositoryConnection.Update(entity);;
+            if (result is not null) return Ok("Entity Updated");
+            else return BadRequest("Error In Updating the Entity");
         }
     }

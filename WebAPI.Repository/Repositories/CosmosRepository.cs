@@ -33,7 +33,7 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
 
     public async Task<ItemResponse<T>> Add(T entity)
     {
-        entity.Id = Guid.NewGuid().ToString();
+        entity.id = Guid.NewGuid().ToString();
         entity.CreatedDateTime = DateTime.UtcNow;
         return await ContainerConnection.CreateItemAsync(entity);
     }
@@ -46,7 +46,7 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
         {
             throw new Exception("Cannot delete this item");
         }
-        return await ContainerConnection.DeleteItemAsync<T>(item.Id, new PartitionKey(item.PartitionKey));
+        return await ContainerConnection.DeleteItemAsync<T>(item.id, new PartitionKey(item.PartitionKey));
     }
 
  
