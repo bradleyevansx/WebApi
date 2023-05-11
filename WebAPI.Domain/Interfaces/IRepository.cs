@@ -11,5 +11,5 @@ public interface IRepository<T> where T : class
     Task<ItemResponse<T>> Delete(string id);
     Task<ItemResponse<T>> Update(T entity);
     
-    Task<T> CheckUserCreds(NewUser request);
+    Task<T> CheckUserCreds(UserInfo request);
 }

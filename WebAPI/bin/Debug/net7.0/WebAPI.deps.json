@@ -1180,6 +1180,8 @@
         "dependencies": {
           "Microsoft.Azure.Cosmos": "3.33.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.IdentityModel.Tokens": "6.30.1",
+          "System.IdentityModel.Tokens.Jwt": "6.30.1",
           "WebAPI.Domain": "1.0.0"
         },
         "runtime": {

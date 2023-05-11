@@ -18,7 +18,7 @@ public static class CosmosUtilities
         throw new Exception("Did not find object");
     }
     
-    public static async Task<T> CheckUsernameAndPassword<T>(this Container container, NewUser newUser)
+    public static async Task<T> CheckUsernameAndPassword<T>(this Container container, UserInfo newUser)
     {
         var results = container.GetItemQueryIterator<T>($"SELECT * FROM c WHERE c.Username = '{newUser.Username}' AND c.Password = '{newUser.Password}'");
         T item = default;
