@@ -14,4 +14,5 @@ public class UserInfoRepository : GenericRepository<UserInfo>
     
     
     
+    
 }

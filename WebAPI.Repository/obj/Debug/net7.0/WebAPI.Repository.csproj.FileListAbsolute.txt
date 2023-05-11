@@ -18,3 +18,5 @@
 /Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/obj/Debug/net7.0/refint/WebAPI.Repository.dll
 /Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/obj/Debug/net7.0/WebAPI.Repository.pdb
 /Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/obj/Debug/net7.0/ref/WebAPI.Repository.dll
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/bin/Debug/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/bin/Debug/net7.0/Microsoft.Extensions.Primitives.dll

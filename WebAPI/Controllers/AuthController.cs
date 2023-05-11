@@ -14,13 +14,13 @@ namespace WebAPITest.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly IConfiguration _configuration;
+    private readonly ITokenRepository _tokenRepository;
     private readonly IRepository<UserInfo> _userInfoRepository;
 
-    public AuthController(IConfiguration configuration, IRepository<UserInfo> userInfoRepository)
+    public AuthController(IRepository<UserInfo> userInfoRepository, ITokenRepository tokenRepository)
     {
-        _configuration = configuration;
         _userInfoRepository = userInfoRepository;
+        _tokenRepository = tokenRepository;
     }
 
     
@@ -40,36 +40,13 @@ public class AuthController : ControllerBase
     }
     
     [HttpPost("login")]
-    public async Task<ActionResult<string>> Login(NewUser request)
+    public async Task<ActionResult<string>> Login(UserInfo request)
     {
         var check = await _userInfoRepository.CheckUserCreds(request);
 
-        var token = CreateToken(check);
+        var token = _tokenRepository.CreateToken(check);
 
         return Ok(token);
-
     }
 
-    private string CreateToken(UserInfo user)
-    {
-        List<Claim> claims = new()
-        {
-            new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.UserData, user.id)
-        };
-
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value!));
-
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
-
-        var token = new JwtSecurityToken(
-            claims: claims,
-            expires: DateTime.Now.AddHours(1),
-            signingCredentials: creds
-        );
-
-        var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-        return jwt;
-    }
 }
