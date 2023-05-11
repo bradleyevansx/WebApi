@@ -1,8 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Cosmos;
 using WebAPITest.Domain.Interfaces;
 using WebAPITest.Domain.Models;
-using WebAPITest.Repository;
 
 namespace WebAPITest.Controllers;
 
@@ -15,19 +14,19 @@ namespace WebAPITest.Controllers;
             RepositoryConnection = repositoryConnection;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public Task<T> GetAsync(string id)
         {
             return RepositoryConnection.Get(id);
         }
         
-        [HttpGet]
+        [HttpGet, Authorize]
         public Task<IEnumerable<T>> GetAllAsync()
         {
             return RepositoryConnection.GetAll();
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public IActionResult CreateAsync([FromBody] T entity)
         {
             var result = RepositoryConnection.Add(entity);
@@ -35,7 +34,7 @@ namespace WebAPITest.Controllers;
             else return BadRequest("Error In Creating the Entity");
         }
         
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize]
         public IActionResult DeleteAsync(string id)
         {
             var result = RepositoryConnection.Delete(id);
@@ -43,7 +42,7 @@ namespace WebAPITest.Controllers;
             else return BadRequest("Error In Deleting the Entity");
         }
         
-        [HttpPut]
+        [HttpPut, Authorize]
         public IActionResult UpdateAsync([FromBody] T entity)
         {
             var result = RepositoryConnection.Update(entity);;

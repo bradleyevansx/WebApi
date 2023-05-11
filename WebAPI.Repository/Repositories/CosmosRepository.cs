@@ -54,4 +54,9 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
     {
         return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(entity.PartitionKey));
     }
+    
+    public async Task<T> CheckUserCreds(NewUser newUser)
+    {
+        return await ContainerConnection.CheckUsernameAndPassword<T>(newUser);
+    }
 }

@@ -35,4 +35,9 @@ public class GenericRepository<T> : IRepository<T> where T : Entity
     {
         return Connection.Update(entity);
     }
+    
+    public Task<T> CheckUserCreds(NewUser newUser)
+    {
+        return Connection.CheckUserCreds(newUser);
+    }
 }
