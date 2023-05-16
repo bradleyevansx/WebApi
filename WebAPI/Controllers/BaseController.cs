@@ -14,19 +14,19 @@ namespace WebAPITest.Controllers;
             _repositoryConnection = repositoryConnection;
         }
 
-        [HttpGet("{id}"), Authorize]
+        [HttpGet("{id}")]
         public Task<T> GetAsync(string id)
         {
             return _repositoryConnection.Get(id);
         }
         
-        [HttpGet, Authorize]
+        [HttpGet]
         public Task<IEnumerable<T>> GetAllAsync()
         {
             return _repositoryConnection.GetAll();
         }
 
-        [HttpPost, Authorize]
+        [HttpPost]
         public IActionResult CreateAsync([FromBody] T entity)
         {
             var result = _repositoryConnection.Add(entity);
@@ -34,7 +34,7 @@ namespace WebAPITest.Controllers;
             else return BadRequest("Error In Creating the Entity");
         }
         
-        [HttpDelete("{id}"), Authorize]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAsync(string id)
         {
             var result = _repositoryConnection.Delete(id);
@@ -42,7 +42,7 @@ namespace WebAPITest.Controllers;
             else return BadRequest("Error In Deleting the Entity");
         }
         
-        [HttpPut, Authorize]
+        [HttpPut]
         public IActionResult UpdateAsync([FromBody] T entity)
         {
             var result = _repositoryConnection.Update(entity);;

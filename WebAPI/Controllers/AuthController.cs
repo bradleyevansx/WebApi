@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -11,7 +12,7 @@ namespace WebAPITest.Controllers;
 
 
 [Route("api/[controller]")]
-[ApiController]
+[ApiController, AllowAnonymous]
 public class AuthController : ControllerBase
 {
     private readonly ITokenRepository _tokenRepository;
@@ -38,15 +39,23 @@ public class AuthController : ControllerBase
 
         return Ok();
     }
-    
+
+    [HttpGet("refresh")]
+    public async Task<IActionResult> Login([FromQuery] string refreshTokenId)
+    {
+        var response = await _tokenRepository.CreateAuthenticationResponseAsync(refreshTokenId);
+
+        return Ok(response);
+    } 
     [HttpPost("login")]
-    public async Task<ActionResult<string>> Login(UserInfo request)
+    public async Task<IActionResult> Login(UserInfo request)
     {
         var check = await _userInfoRepository.CheckUserCreds(request);
 
-        var token = _tokenRepository.CreateToken(check);
+        var response = await _tokenRepository.CreateAuthenticationResponseAsync(check);
 
-        return Ok(token);
+        return Ok(response);
     }
+    
 
 }

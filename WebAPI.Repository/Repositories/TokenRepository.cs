@@ -12,33 +12,74 @@ public class TokenRepository : ITokenRepository
 {
 
     private readonly IConfiguration _configuration;
+    private readonly IRepository<RefreshToken> _refreshTokenRepository;
 
-    public TokenRepository(IConfiguration configuration)
+    public TokenRepository(IConfiguration configuration, IRepository<RefreshToken> refreshTokenRepository)
     {
         _configuration = configuration;
+        _refreshTokenRepository = refreshTokenRepository;
     }
 
 
-    public string CreateToken(UserInfo user)
+    public async Task<AuthenticationResponse> CreateAuthenticationResponseAsync(string refreshTokenId)
+    {
+       var token = await _refreshTokenRepository.Get(refreshTokenId);
+
+       if (token.IsValid is false)
+       {
+           return null;
+       }
+       
+       var response = new AuthenticationResponse();
+       response.userId = token.UserId;
+        
+       SetAccessToken(response);
+       await SetRefreshTokenAsync(response);
+       return response;
+    }
+    public async Task<AuthenticationResponse> CreateAuthenticationResponseAsync(UserInfo userInfo)
+    {
+        var response = new AuthenticationResponse();
+        response.userId = userInfo.id;
+        
+        SetAccessToken(response);
+        await SetRefreshTokenAsync(response);
+        return response;
+    }
+
+    private async Task SetRefreshTokenAsync(AuthenticationResponse response)
+    {
+        var refreshToken = new RefreshToken();
+        refreshToken.UserId = response.userId;
+        refreshToken.IsValid = true;
+        refreshToken.ExpirationDateTime = DateTime.UtcNow.AddMonths(6);
+        await _refreshTokenRepository.Add(refreshToken);
+
+        response.refreshTokenId = refreshToken.id;
+        /// Create Refresh token entity and store in the database, then save Id.
+    }
+    private void SetAccessToken(AuthenticationResponse response)
     {
         List<Claim> claims = new()
         {
-            new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.UserData, user.id)
+            new Claim(ClaimTypes.UserData, response.userId)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value!));
 
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 
+        var expiration = DateTime.UtcNow.AddHours(1);
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.Now.AddHours(1),
+            expires: expiration,
             signingCredentials: creds
         );
 
         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-        return jwt;
+        
+        
+        response.accessToken = jwt;
+        response.accessTokenExpiration = expiration;
     }
 }
