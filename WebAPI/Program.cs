@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
-using WebAPITest.Repository;
+using WebAPI.Repository;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 

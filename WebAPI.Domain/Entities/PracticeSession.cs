@@ -1,4 +1,6 @@
-namespace WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
+
+namespace WebAPI.Domain.Models;
 
 public class PracticeSession : Entity
 {

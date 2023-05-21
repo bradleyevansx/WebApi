@@ -3,10 +3,10 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public class TokenRepository : ITokenRepository
 {

@@ -1,6 +1,6 @@
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public class RefreshTokenRepository : GenericRepository<RefreshToken>
 {

@@ -1,10 +1,10 @@
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.DependencyInjection;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 using Container = System.ComponentModel.Container;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public static class DependencyInjection
 {

@@ -1,7 +1,7 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public static class CosmosUtilities
 {

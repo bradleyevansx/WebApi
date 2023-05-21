@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Controllers;
+namespace WebAPI.Controllers;
 
     public class BaseController<T> : ControllerBase where T : Entity
     {

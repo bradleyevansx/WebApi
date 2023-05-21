@@ -1,7 +1,7 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Domain.Interfaces;
+namespace WebAPI.Domain.Interfaces;
 
 public interface IUnitOfWork : IDisposable
 {

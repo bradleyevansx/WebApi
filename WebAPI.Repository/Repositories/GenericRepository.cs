@@ -1,9 +1,9 @@
 using System.ComponentModel;
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public class GenericRepository<T> : IRepository<T> where T : Entity
 {

@@ -1,6 +1,6 @@
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Domain.Interfaces;
+namespace WebAPI.Domain.Interfaces;
 
 public interface ITokenRepository
 {

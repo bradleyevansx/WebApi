@@ -1,4 +1,4 @@
-namespace WebAPITest.Domain.Models;
+namespace WebAPI.Domain.Models;
 
 public class UserInfo : Entity
 {
