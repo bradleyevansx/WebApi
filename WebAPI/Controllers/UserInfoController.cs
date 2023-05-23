@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Domain.Interfaces;
 using WebAPI.Domain.Models;
+using WebAPI.Repository;
 
 namespace WebAPI.Controllers;
 
@@ -9,7 +10,7 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class UserInfoController : BaseController<UserInfo>
 {
-    public UserInfoController(IRepository<UserInfo> repositoryConnection) : base(repositoryConnection)
+    public UserInfoController(IUserInfoRepository repositoryConnection) : base(repositoryConnection)
     {
     }
 }

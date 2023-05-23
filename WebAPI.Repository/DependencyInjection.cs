@@ -12,6 +12,7 @@ public static class DependencyInjection
     {
 
         services.AddTransient<IRepository<UserInfo>, UserInfoRepository>();
+        services.AddTransient<IUserInfoRepository, UserInfoRepository>();
         services.AddTransient<IRepository<PracticeSession>, PracticeSessionRepository>();
         services.AddTransient<ITokenRepository, TokenRepository>();
         services.AddTransient<IRepository<RefreshToken>, RefreshTokenRepository>();

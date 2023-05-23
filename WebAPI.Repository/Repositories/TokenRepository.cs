@@ -62,7 +62,8 @@ public class TokenRepository : ITokenRepository
     {
         List<Claim> claims = new()
         {
-            new Claim(ClaimTypes.UserData, response.userId)
+            new Claim(ClaimTypes.UserData, response.userId),
+            new Claim(ClaimTypes.Name, response.userId)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value!));

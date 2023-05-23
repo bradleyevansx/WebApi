@@ -2,10 +2,9 @@ using WebAPI.Domain.Models;
 
 namespace WebAPI.Repository;
 
-public class RefreshTokenRepository : GenericRepository<RefreshToken>
+public class RefreshTokenRepository : CosmosRepository<RefreshToken>
 {
-    public RefreshTokenRepository(CosmosConnectionManager connectionManager)
+    public RefreshTokenRepository(CosmosConnectionManager connectionManager) : base(connectionManager, "RefreshToken")
     {
-        Connection = new CosmosRepository<RefreshToken>(connectionManager, "RefreshToken");
     }
 }

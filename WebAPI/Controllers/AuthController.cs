@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Domain.Interfaces;
 using WebAPI.Domain.Models;
+using WebAPI.Repository;
 
 namespace WebAPI.Controllers;
 
@@ -11,9 +12,9 @@ namespace WebAPI.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly ITokenRepository _tokenRepository;
-    private readonly IRepository<UserInfo> _userInfoRepository;
+    private readonly IUserInfoRepository _userInfoRepository;
 
-    public AuthController(IRepository<UserInfo> userInfoRepository, ITokenRepository tokenRepository)
+    public AuthController(IUserInfoRepository userInfoRepository, ITokenRepository tokenRepository)
     {
         _userInfoRepository = userInfoRepository;
         _tokenRepository = tokenRepository;
@@ -43,9 +44,9 @@ public class AuthController : ControllerBase
         return Ok(response);
     } 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(UserInfo request)
+    public async Task<IActionResult> Login([FromBody] string[] usernamePassword)
     {
-        var check = await _userInfoRepository.CheckUserCreds(request);
+        var check = await _userInfoRepository.GetByCredentials(usernamePassword[0], usernamePassword[1]);
 
         var response = await _tokenRepository.CreateAuthenticationResponseAsync(check);
 
