@@ -23,17 +23,13 @@ public class AuthController : ControllerBase
     
 
     [HttpPost("register")]
-    public IActionResult Register(UserInfo request)
+    public async Task<IActionResult> Register(UserInfo request)
     {
+        var newUser = _userInfoRepository.Add(request);
 
-        _userInfoRepository.Add(new UserInfo
-        {
-            id = Guid.NewGuid().ToString(),
-            Username = request.Username,
-            Password = request.Password
-        });
+        var response = await _tokenRepository.CreateAuthenticationResponseAsync(newUser.Result.Resource);
 
-        return Ok();
+        return Ok(response);
     }
 
     [HttpGet("refresh")]

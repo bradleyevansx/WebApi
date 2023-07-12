@@ -41,7 +41,6 @@ namespace WebAPI.Controllers;
             return Ok(item);
         }
             
-
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] T entity)
         {

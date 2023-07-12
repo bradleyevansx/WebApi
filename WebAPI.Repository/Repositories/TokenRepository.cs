@@ -56,7 +56,6 @@ public class TokenRepository : ITokenRepository
         await _refreshTokenRepository.Add(refreshToken);
 
         response.refreshTokenId = refreshToken.id;
-        /// Create Refresh token entity and store in the database, then save Id.
     }
     private void SetAccessToken(AuthenticationResponse response)
     {

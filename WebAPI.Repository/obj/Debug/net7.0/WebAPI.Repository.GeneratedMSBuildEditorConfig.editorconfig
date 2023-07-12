@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebAPITest.Repository
-build_property.ProjectDir = /Users/bradleyevans/Desktop/ProjectTest/WebAPITest/WebAPI.Repository/
+build_property.ProjectDir = /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/

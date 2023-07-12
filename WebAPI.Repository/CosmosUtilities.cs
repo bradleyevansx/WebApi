@@ -15,10 +15,7 @@ public static class CosmosUtilities
             var newItems = await response.ReadNextAsync();
             results.AddRange(newItems);
         }
-
         return results;
-
-
     }
     public static async Task<T?> FirstAsync<T>(this Container container, string id)
     {
