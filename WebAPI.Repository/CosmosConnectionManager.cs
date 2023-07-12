@@ -9,14 +9,13 @@ public class CosmosConnectionManager
 
     public CosmosConnectionManager()
     {
-        ClientConnection = new CosmosClient("AccountEndpoint=https://obito-rip.documents.azure.com:443/;AccountKey=mZm47VxAmbhvNjRgT8CDx03kLmdMfotNW4gyptOfTB4Rl7kxBnzCwXTtcDjh6Cl8tgTuoI56HXKzACDb7QFGjw==;");
+        ClientConnection = new CosmosClient(string ConnectionString);
     }
 
     public Container CreateConnection(string containerId)
     {
         return ClientConnection.GetContainer("Music", containerId);
     }
-
 
 
 }
