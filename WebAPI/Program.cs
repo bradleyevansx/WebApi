@@ -1,8 +1,10 @@
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
-using WebAPITest.Repository;
+using WebAPI.Repository;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -21,19 +23,36 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(x => x.Filters.Add(new AuthorizeFilter()));
 builder.Services.AddRepository();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen(setup =>
 {
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    // Include 'SecurityScheme' to use JWT Authentication
+    var jwtSecurityScheme = new OpenApiSecurityScheme
     {
+        BearerFormat = "JWT",
+        Name = "JWT Authentication",
         In = ParameterLocation.Header,
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey
+        Type = SecuritySchemeType.Http,
+        Scheme = JwtBearerDefaults.AuthenticationScheme,
+        Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
+
+        Reference = new OpenApiReference
+        {
+            Id = JwtBearerDefaults.AuthenticationScheme,
+            Type = ReferenceType.SecurityScheme
+        }
+    };
+
+    setup.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+
+    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        { jwtSecurityScheme, Array.Empty<string>() }
     });
-    options.OperationFilter<SecurityRequirementsOperationFilter>();
+
 });
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
@@ -49,7 +68,8 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
 });
 
 var app = builder.Build();
-
+app.UseAuthentication();
+app.UseAuthorization();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -61,7 +81,6 @@ app.UseHttpsRedirection();
 
 app.UseCors(MyAllowSpecificOrigins);
 
-app.UseAuthorization();
 
 app.MapControllers();
 

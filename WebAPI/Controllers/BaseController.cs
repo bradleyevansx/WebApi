@@ -1,9 +1,10 @@
+using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Controllers;
+namespace WebAPI.Controllers;
 
     public class BaseController<T> : ControllerBase where T : Entity
     {
@@ -14,39 +15,53 @@ namespace WebAPITest.Controllers;
             _repositoryConnection = repositoryConnection;
         }
 
-        [HttpGet("{id}"), Authorize]
-        public Task<T> GetAsync(string id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAsync(string id)
         {
-            return _repositoryConnection.Get(id);
+            var item = await _repositoryConnection.Get(id);
+
+            if (item is null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(item);
         }
         
-        [HttpGet, Authorize]
-        public Task<IEnumerable<T>> GetAllAsync()
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync()
         {
-            return _repositoryConnection.GetAll();
-        }
+            var item = await _repositoryConnection.GetAll();
 
-        [HttpPost, Authorize]
-        public IActionResult CreateAsync([FromBody] T entity)
+            if (item.Count() is 0)
+            {
+                return NotFound();
+            }
+            
+            return Ok(item);
+        }
+            
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] T entity)
         {
-            var result = _repositoryConnection.Add(entity);
-            if (result is not null) return Ok("Entity Created");
+            var result = await _repositoryConnection.Add(entity);
+            if (result.Resource is not null) return Ok("Entity Created");
             else return BadRequest("Error In Creating the Entity");
         }
         
-        [HttpDelete("{id}"), Authorize]
-        public IActionResult DeleteAsync(string id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(string id)
         {
-            var result = _repositoryConnection.Delete(id);
-            if (result is not null) return Ok("Entity Deleted");
+            var result = await _repositoryConnection.Delete(id);
+            if (result.StatusCode is HttpStatusCode.OK) return Ok("Entity Deleted");
             else return BadRequest("Error In Deleting the Entity");
         }
         
-        [HttpPut, Authorize]
-        public IActionResult UpdateAsync([FromBody] T entity)
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync([FromBody] T entity)
         {
-            var result = _repositoryConnection.Update(entity);;
-            if (result is not null) return Ok("Entity Updated");
+            var result = await _repositoryConnection.Update(entity);;
+            if (result.StatusCode is HttpStatusCode.OK) return Ok(result.Resource);
             else return BadRequest("Error In Updating the Entity");
         }
     }

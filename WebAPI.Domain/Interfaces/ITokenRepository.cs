@@ -1,8 +1,9 @@
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Domain.Interfaces;
+namespace WebAPI.Domain.Interfaces;
 
 public interface ITokenRepository
 {
-    string CreateToken(UserInfo user);
+    public Task<AuthenticationResponse> CreateAuthenticationResponseAsync(UserInfo userInfo);
+    public Task<AuthenticationResponse> CreateAuthenticationResponseAsync(string refreshTokenId);
 }

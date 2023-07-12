@@ -1,8 +1,9 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using Microsoft.Azure.Cosmos.Linq;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public class CosmosRepository<T> : IRepository<T> where T : Entity
 {
@@ -13,7 +14,7 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
         ContainerConnection = connectionManager.CreateConnection(ContainerName);
     }
     
-    public async Task<T> Get(string id)
+    public async Task<T?> Get(string id)
     {
         return await ContainerConnection.FirstAsync<T>(id);
     }
@@ -29,6 +30,11 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
         }
 
         return results;
+    }
+
+    public IOrderedQueryable<T> Query()
+    {
+        return ContainerConnection.GetItemLinqQueryable<T>();
     }
 
     public async Task<ItemResponse<T>> Add(T entity)
@@ -55,8 +61,4 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
         return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(entity.PartitionKey));
     }
     
-    public async Task<T> CheckUserCreds(UserInfo newUser)
-    {
-        return await ContainerConnection.CheckUsernameAndPassword<T>(newUser);
-    }
 }

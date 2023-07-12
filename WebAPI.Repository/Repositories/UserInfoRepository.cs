@@ -1,18 +1,28 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Interfaces;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
-public class UserInfoRepository : GenericRepository<UserInfo>
+public interface IUserInfoRepository : IRepository<UserInfo>
 {
+    Task<UserInfo?> GetByCredentials(string username, string password);
+}
 
-    public UserInfoRepository(CosmosConnectionManager connectionManager)
+public class UserInfoRepository : CosmosRepository<UserInfo>, IUserInfoRepository
+{
+    public UserInfoRepository(CosmosConnectionManager connectionManager) : base(connectionManager, "UserInfo")
     {
-        Connection = new CosmosRepository<UserInfo>(connectionManager,"UserInfo");
     }
-    
-    
-    
-    
+
+    public async Task<UserInfo?> GetByCredentials(string username, string password)
+    {
+        var results = await Query().Where(x => x.Username == username && x.Password == password).ToListAsync();
+        if (results.Count is 0)
+        {
+            return null;
+        }
+
+        return results[0];
+    }
 }

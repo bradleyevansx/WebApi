@@ -1,18 +1,17 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using WebAPI.Domain.Interfaces;
-using WebAPI.Domain.Models;
 using WebAPI.Repository;
 
 namespace WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PracticeSessionController : BaseController<PracticeSession>
+public class LifePlanController : BaseController<LifePlan>
 {
-    private readonly IRepository<PracticeSession> _repositoryConnection;
+    private readonly IRepository<LifePlan> _repositoryConnection;
 
-    public PracticeSessionController(IRepository<PracticeSession> repositoryConnection) : base(repositoryConnection)
+    public LifePlanController(IRepository<LifePlan> repositoryConnection) : base(repositoryConnection)
     {
         _repositoryConnection = repositoryConnection;
     }

@@ -1,6 +1,6 @@
 using Microsoft.Azure.Cosmos;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
 public class CosmosConnectionManager : IDisposable
 {

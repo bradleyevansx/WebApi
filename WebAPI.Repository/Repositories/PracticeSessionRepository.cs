@@ -1,15 +1,13 @@
 using Microsoft.Azure.Cosmos;
-using WebAPITest.Domain.Interfaces;
-using WebAPITest.Domain.Models;
+using WebAPI.Domain.Models;
 
-namespace WebAPITest.Repository;
+namespace WebAPI.Repository;
 
-
-public class PracticeSessionRepository : GenericRepository<PracticeSession>
+public class PracticeSessionRepository : CosmosRepository<PracticeSession>
 {
-    public PracticeSessionRepository(CosmosConnectionManager connectionManager)
+    public PracticeSessionRepository(CosmosConnectionManager connectionManager) : base(connectionManager, "Sessions")
     {
-        Connection = new CosmosRepository<PracticeSession>(connectionManager, "Sessions");
+        
     }
     
     
