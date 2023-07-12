@@ -6,9 +6,7 @@
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/WebAPI.Repository.deps.json
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/WebAPI.Repository.dll
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/WebAPI.Repository.pdb
-/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/WebAPI.Domain.dll
-/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/Microsoft.Extensions.Primitives.dll
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/bin/Release/net7.0/WebAPI.Domain.pdb
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/obj/Release/net7.0/WebAPI.Repository.csproj.AssemblyReference.cache
 /Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Repository/obj/Release/net7.0/WebAPI.Repository.GeneratedMSBuildEditorConfig.editorconfig
