@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "WebAPI.Domain/1.0.0": {
         "dependencies": {
-          "Microsoft.Azure.Cosmos": "3.33.0"
+          "Microsoft.Azure.Cosmos": "3.35.1"
         },
         "runtime": {
           "WebAPI.Domain.dll": {}
@@ -33,7 +33,7 @@
           }
         }
       },
-      "Microsoft.Azure.Cosmos/3.33.0": {
+      "Microsoft.Azure.Cosmos/3.35.1": {
         "dependencies": {
           "Azure.Core": "1.19.0",
           "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
@@ -50,16 +50,16 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Client.dll": {
-            "assemblyVersion": "3.33.0.0",
-            "fileVersion": "3.33.0.0"
+            "assemblyVersion": "3.35.1.0",
+            "fileVersion": "3.35.1.0"
           },
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Core.dll": {
             "assemblyVersion": "2.11.0.0",
             "fileVersion": "2.11.0.0"
           },
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Direct.dll": {
-            "assemblyVersion": "3.30.8.0",
-            "fileVersion": "3.30.8.0"
+            "assemblyVersion": "3.31.2.0",
+            "fileVersion": "3.31.2.0"
           },
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll": {
             "assemblyVersion": "1.1.0.0",
@@ -1024,12 +1024,12 @@
       "path": "azure.core/1.19.0",
       "hashPath": "azure.core.1.19.0.nupkg.sha512"
     },
-    "Microsoft.Azure.Cosmos/3.33.0": {
+    "Microsoft.Azure.Cosmos/3.35.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RbEI95ROs4WljcutiG91OBUzYYAKRwkOjAINUkwSw8guZ1P4uyDGB3wPCuYf2DGlacPFhFXftTBbpLUUu9qwGg==",
-      "path": "microsoft.azure.cosmos/3.33.0",
-      "hashPath": "microsoft.azure.cosmos.3.33.0.nupkg.sha512"
+      "sha512": "sha512-IuNTo/Xr8V1gWoRBaiGGazosHj2RMKc7Tr4dJe2KN4jIFPQShf9CYYKiuQiaslrn9+Xittxf1I/MxNz2aRp0Gw==",
+      "path": "microsoft.azure.cosmos/3.35.1",
+      "hashPath": "microsoft.azure.cosmos.3.35.1.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
       "type": "package",

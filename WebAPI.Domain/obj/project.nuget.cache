@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bZL6gmRyrq28rQQNiKO7GwCj+5ZUti59lhqoEcrx3j5OeDCW5nn/H37yi3wqw4H36xFf47EafOUIHQgEpBii1g==",
+  "dgSpecHash": "PnLr7XTk1fvHKEC9kf0veVQGWpsrNzeOYv+Xho2JC5fKuBa0ekOwoyHmcDwB2i7tCV1n9tHu0SI5qEaIIB2C9A==",
   "success": true,
   "projectFilePath": "/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/WebAPI.Domain.csproj",
   "expectedPackageFiles": [
     "/Users/bradleyevans/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
-    "/Users/bradleyevans/.nuget/packages/microsoft.azure.cosmos/3.33.0/microsoft.azure.cosmos.3.33.0.nupkg.sha512",
+    "/Users/bradleyevans/.nuget/packages/microsoft.azure.cosmos/3.35.1/microsoft.azure.cosmos.3.35.1.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.bcl.asyncinterfaces/1.0.0/microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",
