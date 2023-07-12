@@ -26,7 +26,7 @@
           }
         }
       },
-      "Microsoft.Azure.Cosmos/3.33.0": {
+      "Microsoft.Azure.Cosmos/3.35.1": {
         "type": "package",
         "dependencies": {
           "Azure.Core": "1.19.0",
@@ -57,13 +57,6 @@
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Core.dll": {},
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Direct.dll": {},
           "lib/netstandard2.0/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/netstandard2.0/ThirdPartyNotice.txt": {
-            "buildAction": "Content",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
         },
         "build": {
           "build/netstandard2.0/Microsoft.Azure.Cosmos.targets": {}
@@ -1878,23 +1871,23 @@
         "pkgicon.png"
       ]
     },
-    "Microsoft.Azure.Cosmos/3.33.0": {
-      "sha512": "RbEI95ROs4WljcutiG91OBUzYYAKRwkOjAINUkwSw8guZ1P4uyDGB3wPCuYf2DGlacPFhFXftTBbpLUUu9qwGg==",
+    "Microsoft.Azure.Cosmos/3.35.1": {
+      "sha512": "IuNTo/Xr8V1gWoRBaiGGazosHj2RMKc7Tr4dJe2KN4jIFPQShf9CYYKiuQiaslrn9+Xittxf1I/MxNz2aRp0Gw==",
       "type": "package",
-      "path": "microsoft.azure.cosmos/3.33.0",
+      "path": "microsoft.azure.cosmos/3.35.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+        "LICENSE",
+        "ThirdPartyNotice.txt",
         "build/netstandard2.0/Microsoft.Azure.Cosmos.targets",
-        "content/ThirdPartyNotice.txt",
-        "contentFiles/any/netstandard2.0/ThirdPartyNotice.txt",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Client.dll",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Client.xml",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Core.dll",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Direct.dll",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll",
-        "microsoft.azure.cosmos.3.33.0.nupkg.sha512",
+        "microsoft.azure.cosmos.3.35.1.nupkg.sha512",
         "microsoft.azure.cosmos.nuspec",
         "runtimes/win-x64/native/Cosmos.CRTCompat.dll",
         "runtimes/win-x64/native/Microsoft.Azure.Cosmos.ServiceInterop.dll",
@@ -6230,7 +6223,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.Azure.Cosmos >= 3.33.0"
+      "Microsoft.Azure.Cosmos >= 3.35.1"
     ]
   },
   "packageFolders": {
@@ -6273,7 +6266,7 @@
         "dependencies": {
           "Microsoft.Azure.Cosmos": {
             "target": "Package",
-            "version": "[3.33.0, )"
+            "version": "[3.35.1, )"
           }
         },
         "imports": [

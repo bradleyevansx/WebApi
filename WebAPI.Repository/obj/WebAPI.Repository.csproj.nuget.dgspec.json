@@ -41,7 +41,7 @@
           "dependencies": {
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
-              "version": "[3.33.0, )"
+              "version": "[3.35.1, )"
             }
           },
           "imports": [
@@ -105,7 +105,7 @@
           "dependencies": {
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
-              "version": "[3.33.0, )"
+              "version": "[3.35.1, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -117,11 +117,11 @@
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.30.1, )"
+              "version": "[6.31.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.30.1, )"
+              "version": "[6.31.0, )"
             }
           },
           "imports": [
