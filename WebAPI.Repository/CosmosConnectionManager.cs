@@ -2,7 +2,7 @@ using Microsoft.Azure.Cosmos;
 
 namespace WebAPI.Repository;
 
-public class CosmosConnectionManager : IDisposable
+public class CosmosConnectionManager
 {
     private readonly CosmosClient ClientConnection;
 
@@ -18,12 +18,4 @@ public class CosmosConnectionManager : IDisposable
     }
 
 
-
- 
-    public void Dispose()
-    {
-        ClientConnection.Dispose();
-    }
-    
-    
 }
