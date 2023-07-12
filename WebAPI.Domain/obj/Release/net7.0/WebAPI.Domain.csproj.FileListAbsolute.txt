@@ -1,0 +1,17 @@
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/Microsoft.Azure.Cosmos.ServiceInterop.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/Cosmos.CRTCompat.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/msvcp140.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/vcruntime140.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/vcruntime140_1.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/WebAPI.Domain.deps.json
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/WebAPI.Domain.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/bin/Release/net7.0/WebAPI.Domain.pdb
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.csproj.AssemblyReference.cache
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.AssemblyInfoInputs.cache
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.AssemblyInfo.cs
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.csproj.CoreCompileInputs.cache
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/refint/WebAPI.Domain.dll
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/WebAPI.Domain.pdb
+/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI.Domain/obj/Release/net7.0/ref/WebAPI.Domain.dll
