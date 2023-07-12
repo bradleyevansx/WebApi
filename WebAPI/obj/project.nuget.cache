@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VK9mEI3s5CbPoHYd7nqo9tPpIuSkJvCrhJF6w96xvT7E9MzewEHRIKWuRgnuSeEQdOC5N8zD39qdZ7L3YNrKQw==",
+  "dgSpecHash": "cpaUrtAOih0yB2pdeGWMfcFCsH6CrrhB/Y1eb/8aaX5JO7dXFMjcgtBl3v2N+OBOwqEGHdLCcu/yzPvVcIEaTA==",
   "success": true,
   "projectFilePath": "/Users/bradleyevans/Desktop/Student App Folder/WebAPITest/WebAPI/WebAPI.csproj",
   "expectedPackageFiles": [
@@ -12,9 +12,11 @@
     "/Users/bradleyevans/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/bradleyevans/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.extensions.dependencyinjection/2.1.0/microsoft.extensions.dependencyinjection.2.1.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.extensions.dependencymodel/3.1.6/microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512",
+    "/Users/bradleyevans/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.identitymodel.abstractions/6.30.1/microsoft.identitymodel.abstractions.6.30.1.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.30.1/microsoft.identitymodel.jsonwebtokens.6.30.1.nupkg.sha512",
     "/Users/bradleyevans/.nuget/packages/microsoft.identitymodel.logging/6.30.1/microsoft.identitymodel.logging.6.30.1.nupkg.sha512",
