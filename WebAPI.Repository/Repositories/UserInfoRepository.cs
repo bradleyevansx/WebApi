@@ -6,7 +6,7 @@ namespace WebAPI.Repository;
 
 public interface IUserInfoRepository : IRepository<UserInfo>
 {
-    Task<UserInfo?> GetByCredentials(string username, string password);
+    Task<UserInfo?> GetByCredentialsAsync(string username, string password);
 }
 
 public class UserInfoRepository : CosmosRepository<UserInfo>, IUserInfoRepository
@@ -15,7 +15,7 @@ public class UserInfoRepository : CosmosRepository<UserInfo>, IUserInfoRepositor
     {
     }
 
-    public async Task<UserInfo?> GetByCredentials(string username, string password)
+    public async Task<UserInfo?> GetByCredentialsAsync(string username, string password)
     {
         var results = await Query().Where(x => x.Username == username && x.Password == password).ToListAsync();
         if (results.Count is 0)

@@ -23,9 +23,9 @@ public class AuthController : ControllerBase
     
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(UserInfo request)
+    public async Task<IActionResult> RegisterUserAsync(UserInfo request)
     {
-        var newUser = _userInfoRepository.Add(request);
+        var newUser = _userInfoRepository.CreateAsync(request);
 
         var response = await _tokenRepository.CreateAuthenticationResponseAsync(newUser.Result.Resource);
 
@@ -33,16 +33,17 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("refresh")]
-    public async Task<IActionResult> Login([FromQuery] string refreshTokenId)
+    public async Task<IActionResult> LoginAsync([FromQuery] string refreshTokenId)
     {
         var response = await _tokenRepository.CreateAuthenticationResponseAsync(refreshTokenId);
 
         return Ok(response);
     } 
+    
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] string[] usernamePassword)
+    public async Task<IActionResult> LoginAsync([FromBody] string[] usernamePassword)
     {
-        var check = await _userInfoRepository.GetByCredentials(usernamePassword[0], usernamePassword[1]);
+        var check = await _userInfoRepository.GetByCredentialsAsync(usernamePassword[0], usernamePassword[1]);
 
         var response = await _tokenRepository.CreateAuthenticationResponseAsync(check);
 

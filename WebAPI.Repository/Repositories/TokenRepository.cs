@@ -23,7 +23,7 @@ public class TokenRepository : ITokenRepository
 
     public async Task<AuthenticationResponse> CreateAuthenticationResponseAsync(string refreshTokenId)
     {
-       var token = await _refreshTokenRepository.Get(refreshTokenId);
+       var token = await _refreshTokenRepository.GetAsync(refreshTokenId);
 
        if (token.IsValid is false)
        {
@@ -53,7 +53,7 @@ public class TokenRepository : ITokenRepository
         refreshToken.UserId = response.userId;
         refreshToken.IsValid = true;
         refreshToken.ExpirationDateTime = DateTime.UtcNow.AddMonths(6);
-        await _refreshTokenRepository.Add(refreshToken);
+        await _refreshTokenRepository.CreateAsync(refreshToken);
 
         response.refreshTokenId = refreshToken.id;
     }

@@ -7,21 +7,21 @@ namespace WebAPI.Repository;
 
 public class CosmosRepository<T> : IRepository<T> where T : Entity
 {
-    private readonly Container ContainerConnection;
+    private readonly Container _containerConnection;
 
-    public CosmosRepository(CosmosConnectionManager connectionManager, string ContainerName)
+    public CosmosRepository(CosmosConnectionManager connectionManager, string containerName)
     {
-        ContainerConnection = connectionManager.CreateConnection(ContainerName);
+        _containerConnection = connectionManager.CreateConnection(containerName);
     }
     
-    public async Task<T?> Get(string id)
+    public async Task<T?> GetAsync(string id)
     {
-        return await ContainerConnection.FirstAsync<T>(id);
+        return await _containerConnection.FirstAsync<T>(id);
     }
 
-    public async Task<IEnumerable<T>> GetAll()
+    public async Task<IEnumerable<T>> GetAllAsync()
     {
-        var documents = ContainerConnection.GetItemQueryIterator<T>("SELECT * FROM c");
+        var documents = _containerConnection.GetItemQueryIterator<T>("SELECT * FROM c");
         var results = new List<T>();
         while (documents.HasMoreResults)
         {
@@ -34,31 +34,31 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
 
     public IOrderedQueryable<T> Query()
     {
-        return ContainerConnection.GetItemLinqQueryable<T>();
+        return _containerConnection.GetItemLinqQueryable<T>();
     }
 
-    public async Task<ItemResponse<T>> Add(T entity)
+    public async Task<ItemResponse<T>> CreateAsync(T entity)
     {
         entity.id = Guid.NewGuid().ToString();
         entity.CreatedDateTime = DateTime.UtcNow;
-        return await ContainerConnection.CreateItemAsync(entity);
+        return await _containerConnection.CreateItemAsync(entity);
     }
 
-    public async Task<ItemResponse<T>> Delete(string id)
+    public async Task<ItemResponse<T>> DeleteAsync(string id)
     {
-        var item = await ContainerConnection.FirstAsync<T>(id);
+        var item = await _containerConnection.FirstAsync<T>(id);
 
         if (item is null)
         {
             throw new Exception("Cannot delete this item");
         }
-        return await ContainerConnection.DeleteItemAsync<T>(item.id, new PartitionKey(item.PartitionKey));
+        return await _containerConnection.DeleteItemAsync<T>(item.id, new PartitionKey(item.PartitionKey));
     }
 
  
-    public async Task<ItemResponse<T>> Update(T entity)
+    public async Task<ItemResponse<T>> UpdateAsync(T entity)
     {
-        return await ContainerConnection.UpsertItemAsync(entity, new PartitionKey(entity.PartitionKey));
+        return await _containerConnection.UpsertItemAsync(entity, new PartitionKey(entity.PartitionKey));
     }
     
 }
