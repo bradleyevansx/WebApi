@@ -8,17 +8,17 @@ namespace WebAPI.Controllers;
 
     public class BaseController<T> : ControllerBase where T : Entity
     {
-        public IRepository<T> _repositoryConnection { get; }
+        public IRepository<T> RepositoryConnection { get; }
 
         public BaseController(IRepository<T> repositoryConnection)
         {
-            _repositoryConnection = repositoryConnection;
+            RepositoryConnection = repositoryConnection;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(string id)
         {
-            var item = await _repositoryConnection.Get(id);
+            var item = await RepositoryConnection.GetAsync(id);
 
             if (item is null)
             {
@@ -31,7 +31,7 @@ namespace WebAPI.Controllers;
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var item = await _repositoryConnection.GetAll();
+            var item = await RepositoryConnection.GetAllAsync();
 
             if (item.Count() is 0)
             {
@@ -44,7 +44,7 @@ namespace WebAPI.Controllers;
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] T entity)
         {
-            var result = await _repositoryConnection.Add(entity);
+            var result = await RepositoryConnection.CreateAsync(entity);
             if (result.Resource is not null) return Ok("Entity Created");
             else return BadRequest("Error In Creating the Entity");
         }
@@ -52,7 +52,7 @@ namespace WebAPI.Controllers;
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(string id)
         {
-            var result = await _repositoryConnection.Delete(id);
+            var result = await RepositoryConnection.DeleteAsync(id);
             if (result.StatusCode is HttpStatusCode.OK) return Ok("Entity Deleted");
             else return BadRequest("Error In Deleting the Entity");
         }
@@ -60,7 +60,7 @@ namespace WebAPI.Controllers;
         [HttpPut]
         public async Task<IActionResult> UpdateAsync([FromBody] T entity)
         {
-            var result = await _repositoryConnection.Update(entity);;
+            var result = await RepositoryConnection.UpdateAsync(entity);;
             if (result.StatusCode is HttpStatusCode.OK) return Ok(result.Resource);
             else return BadRequest("Error In Updating the Entity");
         }
