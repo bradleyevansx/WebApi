@@ -44,13 +44,13 @@ public class CosmosRepository<T> : IRepository<T> where T : Entity
         return await _containerConnection.CreateItemAsync(entity);
     }
 
-    public async Task<ItemResponse<T>> DeleteAsync(string id)
+    public async Task<ItemResponse<T>?> DeleteAsync(string id)
     {
         var item = await _containerConnection.FirstAsync<T>(id);
 
         if (item is null)
         {
-            throw new Exception("Cannot delete this item");
+            return null;
         }
         return await _containerConnection.DeleteItemAsync<T>(item.id, new PartitionKey(item.PartitionKey));
     }
