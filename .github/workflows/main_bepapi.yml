@@ -40,6 +40,9 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    env:  # Add your environment variables here
+      APIURL: ${{ secrets.APIURL }}
+      CONNECTIONSTRING: ${{ secrets.CONNECTIONSTRING }}
 
     steps:
       - name: Download artifact from build job
