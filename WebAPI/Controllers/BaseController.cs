@@ -6,6 +6,7 @@ using WebAPI.Domain.Models;
 
 namespace WebAPI.Controllers;
 
+    [ApiController, AllowAnonymous]
     public class BaseController<T> : ControllerBase where T : Entity
     {
         public IRepository<T> RepositoryConnection { get; }
@@ -53,7 +54,7 @@ namespace WebAPI.Controllers;
         public async Task<IActionResult> DeleteAsync(string id)
         {
             var result = await RepositoryConnection.DeleteAsync(id);
-            if (result.StatusCode is HttpStatusCode.OK) return Ok("Entity Deleted");
+            if (result is not null) return Ok("Entity Deleted");
             else return BadRequest("Error In Deleting the Entity");
         }
         
